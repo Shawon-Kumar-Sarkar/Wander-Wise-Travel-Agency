@@ -1,0 +1,8 @@
+@media only screen and (max-width: 640px) {
+  .row {
+    width: 96%;
+  }
+  .banner {
+    height: 60%;
+  }
+}
