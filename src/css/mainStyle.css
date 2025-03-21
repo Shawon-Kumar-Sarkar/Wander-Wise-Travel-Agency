@@ -7,6 +7,9 @@
   --banner-box-padding-leftRight: min(4vw, 10%);
   --explore-places-shadow: #008ec40d;
   --primary-border-color: #d9d9d9;
+  --primary-input-color: #252525;
+  --primary-p-font-size: clamp(18px, calc(1.2vw + 0.1rem), 1000px);
+  --secondary-p-font-size: clamp(16px, calc(1vw + 0.1rem), 1000px);
 }
 
 * {
@@ -46,7 +49,7 @@ a {
 
 .banner {
   width: 100%;
-  height: 80%;
+  height: 50%;
 }
 
 .banner-cover {
@@ -64,6 +67,7 @@ a {
 
 .banner-title-subTitle {
   background-color: #fff;
+  text-align: center;
   padding: var(--banner-box-padding-topBottom)
     var(--banner-box-padding-leftRight);
   border-radius: var(--banner-box-radius) var(--banner-box-radius) 0 0;
@@ -71,13 +75,13 @@ a {
 
 .banner-title-subTitle .title {
   color: var(--primary-color);
-  font-size: clamp(24px, calc(2.5vw + 1rem), 1000px);
+  font-size: clamp(30px, calc(2.5vw + 1rem), 1000px);
   font-weight: 700;
 }
 
 .banner-title-subTitle .sub-title {
-  font-size: clamp(14px, calc(2vw + 0.1rem), 1000px);
-  font-weight: 300;
+  font-size: clamp(20px, calc(2vw + 0.1rem), 1000px);
+  font-weight: 400;
 }
 
 .explore-place-container {
@@ -89,5 +93,65 @@ a {
     1vw -1vw 1vw var(--explore-places-shadow),
     1vw 1vw 1vw var(--explore-places-shadow),
     -1vw 1vw 1vw var(--explore-places-shadow);
+}
+
+.search-place-fields-container {
+  width: 70%;
+  margin: 0 auto 1.5vw auto;
+  padding: var(--banner-box-padding-topBottom)
+    var(--banner-box-padding-leftRight);
+  border: 0.1vw solid var(--primary-border-color);
+  border-radius: var(--banner-box-radius);
+}
+
+.search-place-fields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: clamp(5px, 1vw, 100px) clamp(10px, 2vw, 100px);
+}
+
+.search-place-field p {
+  font-size: var(--primary-p-font-size);
+  font-weight: 600;
+  padding-bottom: 0.2vw;
+}
+
+.search-place-field input {
+  width: 100%;
+  font-size: var(--secondary-p-font-size);
+  font-weight: 500;
+  color: var(--primary-input-color);
+  padding: 0.5vw 1vw;
+  border: none;
+  border-bottom: 0.1vw solid var(--primary-border-color);
+}
+
+.search-place-field input:focus-visible {
+  outline: none;
+}
+
+.search-btn-container {
+  grid-column: 2 / span 1;
+}
+
+#search-place-btn {
+  font-size: var(--secondary-p-font-size);
+  font-weight: 600;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.7vw 1vw;
+  border: none;
+  border-radius: var(--banner-box-radius);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+#search-place-btn:hover {
+  background-color: #008ec4cc;
+}
+
+#search-place-btn:active {
+  scale: 97%;
 }
 /* ==============================> End Header Section <============================== */
